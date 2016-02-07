@@ -1,6 +1,15 @@
-<h1><%= @post.title %></h1>
-<p class="meta"><%= @post.author_name %> <%= @post.published_at %></p>
-
-<div class="post-body">
-  <%= markdown(@post.body) %>
+<div id="post-index" class="container">
+    <ol class="post-list">
+      <li class="post-stub">
+        <div class="post-stub-date"><%= @post.published_at.strftime("Publicado el %d-%m-%y a las %H:%M") %></div>
+        <h4 class="post-stub-title">
+          <p class="meta"><%= @post.title %> </p>
+        </h4>
+        <article >
+          <%= markdown(@post.body) %>
+        </article>
+      </li>
+    </ol>
 </div>
+
+

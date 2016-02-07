@@ -1,3 +1,8 @@
-<h2><%= link_to blog_post.title, blog_post.slug %></h2>
-<p class="meta"><%= blog_post.author_name %> <%= blog_post.published_at %></p>
-<p class="intro"><%= truncate(blog_post.body, length: 500) %></p>
+<%= link_to blog_post.slug do%>
+    <h4 class="post-stub-title">
+      <p><%=  blog_post.title %>.</p>
+    </h4>
+    <time class="post-stub-date">
+      <%= blog_post.published_at %>
+    </time>
+<% end %>
